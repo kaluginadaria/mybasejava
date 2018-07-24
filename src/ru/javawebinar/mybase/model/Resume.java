@@ -5,12 +5,13 @@ import java.util.UUID;
 
 public class Resume implements Comparable<Resume> {
 
+    // Unique identifier
     private final String uuid;
 
     private final String fullName;
 
     public Resume(String fullName) {
-        this.fullName = fullName;
+        this(UUID.randomUUID().toString(), fullName);
     }
 
     public Resume(String uuid, String fullName) {
@@ -20,25 +21,8 @@ public class Resume implements Comparable<Resume> {
         this.fullName = fullName;
     }
 
-    public Resume() {
-        this(UUID.randomUUID().toString());
-    }
-
-
     public String getUuid() {
         return uuid;
-    }
-
-
-    @Override
-    public String toString() {
-        return uuid + '(' + fullName + ')';
-    }
-
-    @Override
-    public int compareTo(Resume o) {
-        int cmp = fullName.compareTo(o.fullName);
-        return cmp != 0 ? cmp : uuid.compareTo(o.uuid);
     }
 
     @Override
@@ -50,13 +34,24 @@ public class Resume implements Comparable<Resume> {
 
         if (!uuid.equals(resume.uuid)) return false;
         return fullName.equals(resume.fullName);
-    }
 
+    }
 
     @Override
     public int hashCode() {
         int result = uuid.hashCode();
         result = 31 * result + fullName.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return uuid + '(' + fullName + ')';
+    }
+
+    @Override
+    public int compareTo(Resume o) {
+        int cmp = fullName.compareTo(o.fullName);
+        return cmp != 0 ? cmp : uuid.compareTo(o.uuid);
     }
 }
