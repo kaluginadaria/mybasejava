@@ -4,17 +4,16 @@ import ru.javawebinar.mybase.model.Resume;
 
 import java.util.Arrays;
 
-public class ArrayStorage extends AbstractArrayStorage{
-
+public class ArrayStorage extends AbstractArrayStorage {
 
     @Override
     protected void fillDeletedElement(int index) {
-        storage[index]  = storage [size-1];
+        storage[index] = storage[size - 1];
     }
 
     @Override
     protected void insertElement(Resume r, int index) {
-        storage[index] = r;
+        storage[size] = r;
     }
 
     protected Integer getSearchKey(String uuid) {
@@ -22,9 +21,7 @@ public class ArrayStorage extends AbstractArrayStorage{
             if (uuid.equals(storage[i].getUuid())) {
                 return i;
             }
-
         }
         return -1;
     }
-
 }

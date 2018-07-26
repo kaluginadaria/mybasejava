@@ -2,7 +2,7 @@ package ru.javawebinar.mybase.model;
 
 import java.util.Objects;
 
-public class TextSection {
+public class TextSection extends Section{
 
     private final String content;
 
