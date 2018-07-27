@@ -1,4 +1,4 @@
-package ru.javawebinar.mybase.storage;
+package ru.javawebinar.mybase;
 
 public class MainUtil {
     public static void main(String[] args) {
