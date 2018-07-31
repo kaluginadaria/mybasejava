@@ -3,15 +3,15 @@ package ru.javawebinar.mybase.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Link  implements Serializable{
+public class Link implements Serializable {
     private static final long serialVersionUID = 1L;
     private final String name;
-    private  final String url;
+    private final String url;
 
     public Link(String name, String url) {
         Objects.requireNonNull(name, "name must not be null");
         this.name = name;
-        this.url = url;
+        this.url = url == null ? "" : url;
     }
 
     public String getName() {
