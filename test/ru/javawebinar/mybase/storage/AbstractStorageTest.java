@@ -2,6 +2,7 @@ package ru.javawebinar.mybase.storage;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.javawebinar.mybase.Config;
 import ru.javawebinar.mybase.exception.ExistStorageException;
 import ru.javawebinar.mybase.exception.NotExistStorageException;
 import ru.javawebinar.mybase.model.*;
@@ -15,7 +16,7 @@ import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public abstract class AbstractStorageTest {
-    protected static final File STORAGE_DIR = new File("C:\\Users\\dashu\\Documents\\javaproj\\mybase\\src\\ru\\javawebinar\\mybase\\storage");
+    protected static final File STORAGE_DIR = Config.get().getStorageDir();
 
     protected Storage storage;
 
